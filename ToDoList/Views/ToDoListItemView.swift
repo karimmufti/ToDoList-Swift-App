@@ -8,11 +8,26 @@
 import SwiftUI
 
 struct ToDoListItemView: View {
+    let item: ToDoListItem
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack{
+            VStack(alignment: .leading) {
+                            Text(item.title)
+                                .font(.headline)
+                            Text(
+                                Date(timeIntervalSince1970: item.dueDate)
+                                    .formatted(date: .abbreviated, time: .shortened)
+                            )
+                            .font(.subheadline)
+                            .foregroundColor(.gray)
+                        }
+                        Spacer()
+                    }
+
+        
     }
 }
 
 #Preview {
-    ToDoListItemView()
+    ToDoListItemView(item: .init(id:"123", title: "Test Item", dueDate: 12345),)
 }

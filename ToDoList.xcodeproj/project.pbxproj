@@ -42,6 +42,7 @@
 			isa = PBXGroup;
 			children = (
 				AD98FD762E2EED8000E921C7 /* ToDoList */,
+				AD98FEC42E3C5EA200E921C7 /* Frameworks */,
 				AD98FD752E2EED8000E921C7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -52,6 +53,13 @@
 				AD98FD742E2EED8000E921C7 /* ToDoList.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		AD98FEC42E3C5EA200E921C7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
