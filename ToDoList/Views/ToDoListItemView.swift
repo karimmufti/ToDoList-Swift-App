@@ -11,15 +11,15 @@ struct ToDoListItemView: View {
     let item: ToDoListItem
     var body: some View {
         HStack{
-            VStack(alignment: .leading) {
+            VStack {
                             Text(item.title)
-                                .font(.headline)
-                            Text(
-                                Date(timeIntervalSince1970: item.dueDate)
-                                    .formatted(date: .abbreviated, time: .shortened)
-                            )
-                            .font(.subheadline)
-                            .foregroundColor(.gray)
+                    .font(.title)
+                
+                            Text("\(Date(timeIntervalSince1970:
+                                    item.dueDate).formatted(date: .abbreviated,
+                                    time: .shortened))")
+                            .font(.footnote)
+                            .foregroundColor(Color(.secondaryLabel))
                         }
                         Spacer()
                     }
