@@ -4,7 +4,7 @@
 //
 //  Created by Karim Mufti on 7/21/25.
 //
-
+import FirebaseFirestore
 import Foundation
 
 //ViewModel for list of items view
@@ -12,9 +12,21 @@ import Foundation
 class ToDoListViewViewModel: ObservableObject{
     @Published var showingNewItemView = false
     
-    init() {}
+    private let userId: String
+    init(userId: String) {
+        self.userId = userId
+    }
     
+    
+    /// - Parameter id:
     func delete(id: String){
+        let db = Firestore.firestore()
+        
+        db.collection("users")
+            .document(userId)
+            .collection("todoItems")
+            .document(id)
+            .delete()
         
     }
 }
